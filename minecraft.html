@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Top-up - GameTopup</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <h1>⛏️ Minecraft Top-up</h1>
+            <div class="user-info">
+                <img id="userPhoto" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiM2NjdlZWEiLz4KPHN2ZyB4PSIxMCIgeT0iMTIiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0xMCAxMkMxMCAxMC45IDkuMSAxMCA4IDEwQzYuOSAxMCA2IDEwLjkgNiAxMkM2IDEzLjEgNi45IDE0IDggMTRDOS4xIDE0IDEwIDEzLjEgMTAgMTJaIi8+CjxwYXRoIGQ9Ik0xNCAxMkMxNCAxMC45IDEzLjEgMTAgMTIgMTBDMTAuOSAxMCAxMCAxMC45IDEwIDEyQzEwIDEzLjEgMTAuOSAxNCAxMiAxNEMxMy4xIDE0IDE0IDEzLjEgMTQgMTJaIi8+CjxwYXRoIGQ9Ik0xMCAxNkMxMCAxNS40IDkuNiAxNSA5IDE1QzguNCAxNSA4IDE1LjQgOCAxNkM4IDE2LjYgOC40IDE3IDkgMTdDOS42IDE3IDEwIDE2LjYgMTAgMTZaIi8+CjxwYXRoIGQ9Ik0xNCAxNkMxNCAxNS40IDEzLjYgMTUgMTMgMTVDMTIuNCAxNSAxMiAxNS40IDEyIDE2QzEyIDE2LjYgMTIuNCAxNyAxMyAxN0MxMy42IDE3IDE0IDE2LjYgMTQgMTZaIi8+Cjwvc3ZnPgo8L3N2Zz4K" alt="User">
+                <div class="user-details">
+                    <h3 id="userName">Loading...</h3>
+                    <p id="userEmail">Loading...</p>
+                </div>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="nav-tab" onclick="window.location.href='main.html'">← Back to Dashboard</button>
+        </div>
+
+        <div class="game-content">
+            <div class="game-info">
+                <h2>⛏️ Minecraft Coins</h2>
+                <p>Get Minecraft coins to unlock skins, maps, and exclusive content!</p>
+            </div>
+
+            <div class="packages-grid">
+                <div class="package-card" onclick="selectPackage('1000 Coins', 200)">
+                    <h3>1000 Coins</h3>
+                    <div class="package-price">৳200</div>
+                    <p>Starter package</p>
+                </div>
+                
+                <div class="package-card" onclick="selectPackage('2500 Coins', 500)">
+                    <h3>2500 Coins</h3>
+                    <div class="package-price">৳500</div>
+                    <p>Popular choice</p>
+                </div>
+                
+                <div class="package-card" onclick="selectPackage('5000 Coins', 1000)">
+                    <h3>5000 Coins</h3>
+                    <div class="package-price">৳1000</div>
+                    <p>Great value</p>
+                </div>
+                
+                <div class="package-card" onclick="selectPackage('10000 Coins', 2000)">
+                    <h3>10000 Coins</h3>
+                    <div class="package-price">৳2000</div>
+                    <p>Premium package</p>
+                </div>
+                
+                <div class="package-card" onclick="selectPackage('25000 Coins', 5000)">
+                    <h3>25000 Coins</h3>
+                    <div class="package-price">৳5000</div>
+                    <p>Ultimate package</p>
+                </div>
+                
+                <div class="package-card" onclick="selectPackage('50000 Coins', 10000)">
+                    <h3>50000 Coins</h3>
+                    <div class="package-price">৳10000</div>
+                    <p>Mega package</p>
+                </div>
+            </div>
+
+            <div class="order-form" id="orderForm" style="display: none;">
+                <h3>Place Order</h3>
+                <form id="topupForm">
+                    <div class="form-group">
+                        <label for="uid">Minecraft Username</label>
+                        <input type="text" id="uid" placeholder="Enter your Minecraft username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="selectedPackage">Selected Package</label>
+                        <input type="text" id="selectedPackage" readonly>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="amount">Amount (TK)</label>
+                        <input type="number" id="amount" readonly>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="paymentMethod">Payment Method</label>
+                        <select id="paymentMethod" required>
+                            <option value="">Select payment method</option>
+                            <option value="wallet">Wallet Balance</option>
+                            <option value="bkash">bKash</option>
+                            <option value="nagad">Nagad</option>
+                            <option value="rocket">Rocket</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="note">Note (Optional)</label>
+                        <textarea id="note" placeholder="Any special instructions..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Place Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/game-topup.js"></script>
+</body>
+</html> 
