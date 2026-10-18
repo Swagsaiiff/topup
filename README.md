@@ -6,7 +6,7 @@ A fully functional gaming top-up website built with plain HTML, CSS, and JavaScr
 
 ### 🔐 Authentication System
 - **User Login**: Regular users can login with email/password or Google
-- **Admin Login**: Special admin access for `tahsan897@gmail.com`
+- 
 - **Google Authentication**: OAuth integration for seamless login
 - **Role-based Access**: Automatic redirection based on user role
 
@@ -48,11 +48,6 @@ A fully functional gaming top-up website built with plain HTML, CSS, and JavaScr
    - Enable Authentication (Email/Password and Google)
    - Enable Firestore Database
    - Update Firebase config in `js/firebase-config.js`
-
-3. **Admin Setup**
-   - Create admin account with email: `tahsan897@gmail.com`
-   - Set password: `778899`
-   - Or use Google login with the same email
 
 4. **Deploy**
    - Upload files to web server
@@ -137,7 +132,7 @@ gaming-topup-website/
 
 ```javascript
 const firebaseConfig = {
-  apiKey: "AIzaSyCTSDXAnJP4iW1xTwq58ebQ02d6NubZ908",
+  apiKey: "",
   authDomain: "gametopupplus.firebaseapp.com",
   projectId: "gametopupplus",
   storageBucket: "gametopupplus.firebaseapp.com",
